@@ -10,4 +10,4 @@ These keypoints mark important areas of the face: the eyes, corners of the mouth
 These keypoints are relevant for a variety of tasks, such as face filters, emotion recognition, pose recognition, and so on. 
 Here they are, numbered, and you can see that specific ranges of points match different portions of the face.
 
-![alt text][./images/landmarks_numbered.jpg]
+![alt text]["./images/landmarks_numbered.jpg"]
