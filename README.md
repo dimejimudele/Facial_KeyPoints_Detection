@@ -11,7 +11,7 @@ These keypoints mark important areas of the face: the eyes, corners of the mouth
 These keypoints are relevant for a variety of tasks, such as face filters, emotion recognition, pose recognition, and so on. 
 Here they are, numbered, and you can see that specific ranges of points match different portions of the face.
 
-![Facial landmarks numbers](https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/landmarks_numbered.jpg)
+![Facial landmarks numbers](../images/landmarks_numbered.jpg =300x300)
 
 ## Data
 The set of image data used in this project have been extracted from the [YouTube Faces Dataset](https://www.cs.tau.ac.il/~wolf/ytfaces/), which includes videos of people in YouTube videos. 
