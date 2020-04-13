@@ -2,7 +2,7 @@
 ## Udacity computer vision nanodegree Project 1
 
 This project is about defining and training a convolutional neural network to perform facial keypoint detection, 
-and using computer vision techniques to transform images of faces. 
+and using computer vision techniques to transform images of faces. The implementation is done using PyTorch framework.
 
 
 Facial keypoints (also called facial landmarks) are the small magenta dots shown on each of the faces in the image above. 
@@ -12,15 +12,16 @@ These keypoints are relevant for a variety of tasks, such as face filters, emoti
 Here they are, numbered, and you can see that specific ranges of points match different portions of the face.
 
 
+
 <div>
-<img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/landmarks_numbered.jpg" width="300" height="500"/>
+<img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/landmarks_numbered.jpg" width="300" height="400"/>
 </div>
 
 ## Data
 The set of image data used in this project have been extracted from the [YouTube Faces Dataset](https://www.cs.tau.ac.il/~wolf/ytfaces/), which includes videos of people in YouTube videos. 
 These videos have been fed through some processing steps and turned into sets of image frames containing one face and the associated keypoints.
 
-### Training and Testing Data
+#### Training and Testing Data
 This facial keypoints dataset consists of 5770 color images. 
 All of these images are separated into either a training or a test set of data.
 
@@ -46,3 +47,80 @@ Net(
   (dropout): Dropout(p=0.3)
 )
 ```
+
+## Parameter settings and evaluation metrics
+
+The loss function and optimizer are defined in PyTorch as below:
+
+```
+import torch.optim as optim
+
+criterion = nn.MSELoss()
+
+optimizer = optim.Adam(net.parameters(), lr = 0.0001, weight_decay = 0)
+```
+As shown above, I used the mean sqaure error loss function and Adam optimizer. I trained the model for *5 epochs*
+
+## Results
+#### Before training
+Random images selected
+<div class="row">
+  <div class="column">
+    <img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/pretrain_1.png">
+  </div>
+  <div class="column">
+    <img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/pretrain_2.png">
+  </div>
+  <div class="column">
+    <img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/pretrain_3.png">
+  </div>
+</div>
+
+#### After training
+Random images selected
+<div class="row">
+  <div class="column">
+    <img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/test_1.png">
+  </div>
+  <div class="column">
+    <img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/test_2.png">
+  </div>
+  <div class="column">
+    <img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/test_3.png">
+  </div>
+</div>
+
+The best model obtained during the 5 epoch training was used for the predictions shown above. The model has been saved in the file: 
+`.\saved_models\keypoints_project_CNN_model.pt` of the project directory.
+
+## Real world application
+Since real world images do not only contain faces, there is the need to extract faces from them before applying the CNN model obtained in this project.
+For this, a pretrained Haar Cascade detector can be used. I outline the process for doing this below:
+
+* Detect all the faces in an image using a face detector using *Haar Cascade detector* pretrained model.
+* Pre-process those face images so that they are grayscale, and transformed to a Tensor of the input size fit for the CNN. 
+Preprocessing tasks performed include rescaling, normalization, and conversion of images to Tensor.
+* Use your trained model to detect facial keypoints on the image.
+
+#### Sample result compatible with real world application
+
+<div>
+*Original image*
+<img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/obamas.jpg" width="300" height="400"/>
+</div>
+
+
+<div>
+*Faces detected and extracted with Haar Cascade detector*
+<img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/obamas_detected.png" width="300" height="400"/>
+</div>
+
+<div>
+*Michelle Obama facial keypoints detected with CNN*
+<img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/michelle_detected.png" width="300" height="400"/>
+</div>
+
+<div>
+*Michelle Obama facial keypoints detected with CNN*
+<img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/barack_detected.png" width="300" height="400"/>
+</div>
