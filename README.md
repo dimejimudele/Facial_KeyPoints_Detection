@@ -32,7 +32,7 @@ The information about the images and keypoints in this dataset are summarized in
 
 ## Network achitecture
 
-The convolutional neural network is defined as class `Net()` in the file named `model.py` with the archetecture shown below:
+The convolutional neural network is defined as class `Net()` in the file named `model.py` with the architecture shown below:
 ```
 Net(
   (conv1): Conv2d(1, 32, kernel_size=(5, 5), stride=(1, 1))
