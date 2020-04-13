@@ -99,9 +99,8 @@ For this, a pretrained Haar Cascade detector can be used. I outline the process 
 
 * Detect all the faces in an image using a face detector. For this project, I used 
 [Haar Cascade detector](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html) pretrained model.
-* Pre-process those face images so that they are grayscale, and transformed to a Tensor of the input size fit for the CNN. 
-Preprocessing tasks performed include rescaling, normalization, and conversion of images to Tensor.
-* Use your trained model to detect facial keypoints on the image.
+* Pre-process the face images. Preprocessing tasks performed for this project include rescaling, normalization, and conversion of images to Tensor.
+* Use trained model to detect facial keypoints on the image.
 
 #### Sample result compatible with real world application
 
