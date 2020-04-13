@@ -106,21 +106,18 @@ Preprocessing tasks performed include rescaling, normalization, and conversion o
 #### Sample result compatible with real world application
 
 <div class="row">
-  	<div class="column">
-	<img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/obamas.jpg" width="400" height="300"/>
-	</div>
+  <div class="column">
+    <img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/obamas.jpg" width="400" height="300"/>
+  </div>
 
+  <div class="column">
+    <img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/obamas_detected.png" width="400" height="300"/>
+  </div>
 
-	<div class="column">
-	<img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/obamas_detected.png" width="400" height="300"/>
-	</div>
-
-	<div class="column">
-	<img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/michelle_detected.png" width="300" height="300"/>
-	</div>
-
-	<div class="column">
-
-	<img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/barack_detected.png" width="300" height="300"/>
-	</div>
+  <div class="column">
+    <img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/michelle_detected.png" width="300" height="300"/>
+  </div>
+  <div class="column">
+    <img src="https://github.com/dimejimudele/Udacity_Facial_KeyPoints_Detection/blob/master/images/barack_detected.png" width="300" height="300"/>
+  </div>
 </div>
