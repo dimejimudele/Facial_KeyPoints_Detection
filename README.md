@@ -1,5 +1,5 @@
 # FACIAL KEYPOINT DETECTION 
-## Udacity computer vision nanodegree Project 1
+## Computer vision nanodegree Project 1
 
 This project is about defining and training a convolutional neural network to perform facial keypoint detection, 
 and using computer vision techniques to transform images of faces. The implementation is done using PyTorch framework.
